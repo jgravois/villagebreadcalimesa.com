@@ -1,0 +1,55 @@
+.grid {
+  --gap: 0px;
+  display: grid;
+  gap: var(--gap);
+
+  /* Using clamp() */
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(
+        clamp(
+          100% - var(--gap),
+          (50rem - 100%) * 999,
+          100%),
+        1fr
+      )
+    );
+}
+
+.item {
+  padding: 3rem 8rem;
+  text-align: center;
+}
+
+.logo {
+  width: 7rem;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'EB Garamond', serif;
+  font-weight: 400;
+}
+
+h1, h2 {
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+ul {
+  list-style-type: none;
+}
