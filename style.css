@@ -1,3 +1,8 @@
+/* https://blog.logrocket.com/flexible-layouts-without-media-queries/ */
+* {
+  --fluid-size: var(--min-font-size) * 1px + (var(--max-font-size) - var(--min-font-size)) * ((100vw - 420px) / (1200 - 420));
+}
+
 .grid {
   --gap: 0px;
   display: grid;
@@ -38,18 +43,39 @@ h1, h2 {
   margin-bottom: 0.5rem;
 }
 
+h1, h2, p, li {
+  font-size:
+    clamp(
+        var(--min-font-size) * 1px,
+        var(--fluid-size),
+        var(--max-font-size) * 1px
+    );
+}
+
 h1 {
-  font-size: 4rem;
+  --min-font-size: 30;
+  --max-font-size: 60;
 }
 
 h2 {
-  font-size: 2rem;
+  --min-font-size: 24;
+  --max-font-size: 48;
 }
 
 p {
-  font-size: 1.5rem;
+  --min-font-size: 18;
+  --max-font-size: 36;
 }
 
-ul {
-  list-style-type: none;
+li {
+  --min-font-size: 14;
+  --max-font-size: 28;
+}
+
+a {
+  color: #000;
+}
+
+a:hover {
+  color: #444;
 }
