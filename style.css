@@ -23,8 +23,12 @@
 }
 
 .item {
-  padding: 3rem 8rem;
+  padding: 3rem;
   text-align: center;
+}
+
+.item img {
+  max-width: 80%;
 }
 
 .logo {
@@ -34,7 +38,9 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: 'EB Garamond', serif;
+  background-color: #0c343d;
+  color: #e1d8b1;
+  font-family: 'Noto Sans', sans-serif;
   font-weight: 400;
 }
 
@@ -73,9 +79,18 @@ li {
 }
 
 a {
-  color: #000;
+  color: #e1d8b1;
 }
 
 a:hover {
-  color: #444;
+  color: #fff2cc;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+}
+
+.social {
+  width: 40px;
 }
