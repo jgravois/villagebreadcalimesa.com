@@ -59,23 +59,23 @@ h1, h2, p, li {
 }
 
 h1 {
-  --min-font-size: 30;
+  --min-font-size: 40;
   --max-font-size: 60;
 }
 
 h2 {
   --min-font-size: 24;
-  --max-font-size: 48;
+  --max-font-size: 36;
 }
 
 p {
   --min-font-size: 18;
-  --max-font-size: 36;
+  --max-font-size: 30;
 }
 
 li {
   --min-font-size: 14;
-  --max-font-size: 28;
+  --max-font-size: 24;
 }
 
 a {
@@ -89,8 +89,44 @@ a:hover {
 .box {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .social {
   width: 40px;
+}
+
+/* FAQ - adapted from https://codeconvey.com/html-expand-collapse-text-without-javascript/ */
+.accordion > input[name="collapse"] {
+  display: none;
+}
+
+.accordion .content {
+  overflow: hidden;
+  height: 0;
+  transition: 0.5s;
+}
+
+.accordion label {
+  cursor: pointer;
+}
+
+.accordion .handle label:before {
+  content: "~";
+  display: inline-block;
+  margin-right: 10px;
+  line-height: 1.556em;
+  vertical-align: middle;
+  transition: 0.4s;
+}
+
+.accordion > input[name="collapse"]:checked ~ .handle label:before {
+    transform: rotate(180deg);
+    transform-origin: center;
+    transition: 0.4s;
+}
+
+.accordion > input[name="collapse"]:checked ~ .content {
+  height: 280px;
+  transition: height 0.5s;
 }
