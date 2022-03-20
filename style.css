@@ -127,6 +127,6 @@ a:hover {
 }
 
 .accordion > input[name="collapse"]:checked ~ .content {
-  height: 280px;
+  height: unset; /* how to animate variable height? */
   transition: height 0.5s;
 }
